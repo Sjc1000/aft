@@ -5,7 +5,7 @@ from setuptools import setup
 
 
 setup(name='aft',
-      version='0.1.8',
+      version='0.2.0',
       description='',
       author='Steven J. Core',
       author_email='42Echo6Alpha@gmail.com',
@@ -13,9 +13,9 @@ setup(name='aft',
       packages=['aft'],
       zip_safe=False,
       include_package_data=True,
-      install_requires=['pyyaml'],
+      install_requires=['pyyaml', 'urwid'],
       entry_points={
         'console_scripts': [
-            'aft = aft.aft:main'
+            'aft = aft.program:main'
          ]
       })

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from aft.aft import main
+from aft.program import main
 
 
 main()
