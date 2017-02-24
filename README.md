@@ -77,3 +77,48 @@ So you can have global settings in here with custom settings in the other config
 Run `aft load group_name config_name` to load a config. Or run aft with no params to load the UI.
 
 
+
+## Config examples
+
+```yaml
+border:
+    inactive: "#060c0e"
+    active: "#9BC0C0"
+    pixels: 7
+
+terminal:
+    background: "#060c0e"
+    pallet: "rgb(15,31,30);rgb(35,58,59);rgb(55,85,91);rgb(78,115,125);rgb(101,147,160);rgb(147,177,185);rgb(192,207,211);rgb(238,238,238);rgb(15,31,30);rgb(35,58,59);rgb(55,85,91);rgb(78,115,125);rgb(101,147,160);rgb(147,177,185);rgb(192,207,211);rgb(238,238,238)"
+
+conky:
+    r: 241
+    g: 241
+    b: 241
+
+gaps:
+    inner: 10
+    outter: 5
+
+
+background: "/home/steven/images/wallpapers/wallhaven-386454.jpg"
+inactive_opacity: 0.98
+```
+
+and here is a snippet from my i3 config, to show where the variables are placed.
+
+this is in ~/.aft/templates/i3/files/home/steven/.i3/config
+
+
+```
+set $border-color $border.inactive$
+set $bg-color #202020
+set $inactive-bg-color #555555
+set $text-color #FFFFFF
+set $inactive-text-color #666666
+set $urgent-bg-color #E53935
+set $active-border-color $border.active$
+
+
+gaps inner $gaps.inner$
+gaps outer $gaps.outter$
+```
