@@ -133,6 +133,7 @@ def create_template(group, name):
 
 
 def main():
+    global DEBUG
     create_default()
 
     parser = argparse.ArgumentParser()
@@ -140,19 +141,22 @@ def main():
     parser.add_argument('group', nargs='?')
     parser.add_argument('config', nargs='?')
     parser.add_argument('-f', '--files', nargs='*')
+    parser.add_argument('-V', '--verbose', default=False)
     args = parser.parse_args()
+
+    DEBUG = args.verbose
 
     if args.command is None:
         # Load up the UI
-
         ui = UI()
         ui.run()
         return None
 
     if args.command == 'load':
-        if args.config == '$':
+        if args.config == 'random':
             files = os.listdir('{}templates/{}'.format(DOT, args.group))
-            files = [x.replace('.yaml', '') for x in files if x.endswith('.yaml')]
+            files = [x.replace('.yaml', '') for x in files
+                     if x.endswith('.yaml')]
             config = random.choice(files)
         else:
             config = args.config
