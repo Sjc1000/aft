@@ -1,5 +1,7 @@
 # AFT File Templates
 
+**THIS PROJECT HAS BEEN ABANDONED**
+
 Create and store file templates.
 
 Uses variables for different configs in each group.
